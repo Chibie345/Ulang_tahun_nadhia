@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SELAMAT ULANG TAHUN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      .text-container {
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        color: rgb(21, 173, 196);
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body
+    style="background-image: url('poto1.jpg');"
+    class="flex justify-center h-screen items-center"
+  >
+    <audio autoplay loop>
+      <source src="sempurna1.MP3" type="audio/mpeg" />
+    </audio>
+
+    <div
+      class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-10 w-full"
+      id="kartu"
+    >
+      <h1 class="text-2xl font-bold">🎊🎉Happy Milad Nengg Ayangg🎉🎊</h1>
+      <div id="text-container" class="text-container"></div>
+      <button
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-60 animate__animated animate__delay-1000s animate__pulse animate__infinite"
+        onclick="ubahKartu()"
+      >
+        Lanjut
+      </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+      const text = "Sayangggnya masss🙆🙆, yangg paling mass banggakan,yang notifnya selalu mass tunggu-tunggu,dan selalu bikin mass kepikiran akan dirimu,eummmm terimakasih ya sayangg, terimakasihhh sekali buatt nengg udah mau sama mass sampai saat ini🥹🥹,masss minta maaf ya nengg belum bisa jadi pria yang baik buat nengg bahkan selalu buat nengg kecewa terhadap mass,mass mintaa maap yaa sayangg,masss mau bilangg....bahwa mass sayanggg bangett sama nengg,nengg adalah orang yang mass cintai untuk terakhir kalinya❤️❤️,tujuan mass bukan main-main sayangg,insyaallah suatu saat mass sukses mass akan langsung menghalalkanmu sayangg...aamiinn🙆🙆,sayangg walaupun sekarang keadaan kita seperti ini yang berkabar pun tidak lagi 1x24 jam tapi mass harap kita sama-sama menyempatkan memberi kabar ya sayangg,masss kangenn dirimu sayangg🫠🫠,kadangg kann kalau nengg tiba-tiba chat gitu seneng kali mass rasa karna itulah satu hal utama yang mass tunggu-tunggu  walaupun kadang kan nengg dan mass chatannya sebentar habis tuh harus nunggu beberapa hari bisa chat lagi🫠🫠,masss ngucapin makasih bangettt buat nengg udah sampai sejauh inii!!!,terimakasih juga yaa sayangg udah mau sabar banget ke mass,maapin mass yakk nengg?sayanggg walaupun komunikasi kita ga selancar seperti dulu tapi mass harap kita akan terus bersama-sama hingga akhir,nengg harapan mass dan mass mau juga sebaliknya,kita hadapin bareng-bareng,mass mau neng dampingin hidup mass dan mass mau dampingin hidup neng💗💗,jika nengg bercanda ria ajak mass dalam hal itu ya sayangg,ketawa bahagia sedih susah bareng ya sayangg,,pokoknya mass selalu ada disini  buat nenggg sayanggg!!,hal baik-baik kekita selalu ya sayangggkuhh,maaf nengg kalau masss udah merepotkanmu sayanggg,terkadang mass buat neng kecewa,maap ya nengg mass yang cantik inilah mass sayangg💋💋💋,tapi mass juga harus bisa lebih baik lagi buat dirimu sayangg,mass belum jadi yang terbaik tapi masss selalu berusaha jadi yang terbaik buat nengg dengan semampu masss,bebankan mass dan libatkan mass disegala kesibukan dirimu nengg sayangg atapun disegala keadaanmu ya sayanggg,Lovee Youuuu Sayanggg....❤️❤️❤️kepada yang Tercinta dan Tersayang Nadhia Dwi Ulandari Lubis🙆🙆🙆";
+      const container = document.getElementById("text-container");
+      let i = 0;
+
+      function typeText() {
+        if (i < text.length) {
+          container.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeText, 82);
+        }
+      }
+
+      typeText();
+
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+
+      function ubahKartu() {
+        window.location.href = "halaman_keempat.html";
+      }
+    </script>
+  </body>
+</html>

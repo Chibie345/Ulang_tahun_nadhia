@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SELAMAT ULANG TAHUN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh; 
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <audio autoplay loop>
+      <source src="backsound ulang tahun.MP3" type="audio/mpeg" />
+    </audio>
+    <script src="style.js"></script>
+    <video class="video-bg" autoplay muted loop>
+      <source src="video1.mp4" type="video/mp4" />
+    </video>
+
+    <div class="content">
+      <h1 class="text-4xl text-black font-bold animate__animated animate__pulse">
+        🎉🎉 Barakallah Fii Umrik Sayangg 🎉🎉
+      </h1>
+      <h1
+        class="text-3xl text-blue-900 font-bold animate__animated animate__pulse animate__infinite mt-4"
+      >
+        Nadhia Dwi Ulandari Lubis
+      </h1>
+      <button
+        class="p-3 bg-blue-600 text-white rounded mt-8 hover:bg-blue-900 transition ease-in w-40 animate__animated animate__delay-1s animate__tada"
+        onclick="ubahKartu()"
+        id="iya"
+      >
+        Lanjut
+      </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+
+      function ubahKartu() {
+        window.location.href = "halaman_pertama.html";
+      }
+    </script>
+  </body>
+</html>

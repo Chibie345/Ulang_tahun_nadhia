@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SELAMAT ULANG TAHUN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+  <body class="bg-slate-800 flex justify-center items-center h-screen">
+    <div
+      id="kartu"
+      class="border border-2 border-gray-600 bg-white p-4 rounded-md shadow-lg shadow-slate-700 justify-center flex flex-col animate__animated animate__fadeInUp m-8 w-70"
+    >
+      <img
+        id="gambar"
+        class="rounded-md mb-3"
+        src="https://i.pinimg.com/originals/69/16/67/6916671499c086667e475c14b741d64b.gif"
+        width="400"
+        alt=""
+      />
+      <h1 class="font-bold text-slate-800 text-xl text-center" id="kalimat">
+        Nengg Sayangg Sama Mass Ntakk Nengg?
+      </h1>
+      <div class="mt-4 text-white justify-center flex gap-4">
+        <button
+          onclick="yaDitekan()"
+          id="tombolYa"
+          class="bg-green-700 px-4 py-1 rounded w-32"
+        >
+          YA
+        </button>
+        <button
+          id="tombolTidak"
+          onclick="tidakDitekan()"
+          class="bg-red-700 px-4 py-1 rounded w-32"
+        >
+          TIDAK
+        </button>
+      </div>
+    </div>
+    <script>
+      let kartu = document.getElementById("kartu");
+      let tombolYa = document.getElementById("tombolYa");
+
+      let listKalimat = [
+        "ihhh nengg mass ga sayangg sama mass :(",
+        "Kaburrr lagiiiii ahhhhh",
+        "Hayoo Coba Lagi Sayanggg",
+        "Klik Iyaa nya sayanggkuhhh cintaaa",
+      ];
+      let kalimat = document.getElementById("kalimat");
+
+      function yaDitekan() {
+        kartu.innerHTML = `
+          <audio autoplay loop>
+            <source src="instrumen2.MP3" type="audio/mpeg" />
+          </audio>
+          <div id="text-container" class="font-semibold text-wrap animate__animated animate__fadein text-center"></div>
+          <h2 class="mt-3 font-bold animate__animated animate__fadeIn text-center">
+            💓 Bagas Aditya Silalahi 💓
+          </h2>
+          <div class="flex justify-center items-center mt-6">
+            <button 
+              onclick="lanjut()" 
+              class="animate__animated animate__fadeIn animate_delay-3s animate_infinite p-2 bg-slate-600 text-white rounded hover:bg-slate-900 transition ease-in w-60">
+              Lanjut
+            </button>
+          </div>
+        `;
+
+      
+        const text = "🎊🎉Selamat ulang tahun sayanggg🎉🎊, Tak terasa sudah bertambah usia nengnya mass,masyallah makin dewasa neng mass ni,semoga nengnya mass disehatkan selalu rezekinya dilimpahkan,selalu dihindarkan dari segala macam marabahaya dan malapetaka,segala harapan yang diharapkan akan segera tercapai ya sayangg aamiinnn...ya allah,dan dengan bertambahnya usia yang ke 19 tahun nengg mass menjadi wanita mass lebih baik yang buruk-buruk ditinggalkan yang baik-baik diteruskan ya sayangg,jangan pernah putus asa dalam hal keadaan apapun sayangg,mass ada disini neng jangan takut,apapun yang terjadi sayang kita jalanin bersama oteyyyy...?,siapapun yang mengganggu dia yang iri atas apa pencapaian diri nengg,sifat dan perilaku istimewa nengg yang tidak dimiliki orang lain,Tetap semangat dan ceria sayangg menjalani hari-harinya dan jangan mendengarkan perkataan orang yang buruk-buruk dihiraukan aja ya sayanggkuhh,sekali lagi Happy Milad Nengg Sayangg...Lopyouuuu💋💋💋";
+        const container = document.getElementById("text-container");
+        let i = 0;
+
+        function typeText() {
+          if (i < text.length) {
+            container.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeText,40); 
+          }
+        }
+
+        typeText();
+      }
+
+      function tidakDitekan() {
+        let kalimatRandom = Math.floor(Math.random() * listKalimat.length);
+        kalimat.innerHTML = listKalimat[kalimatRandom];
+        tombolTidak.style.position = "absolute";
+        let angkaRandom = Math.floor(
+          Math.random() * document.documentElement.clientWidth
+        );
+        let angkaRandom2 = Math.floor(
+          Math.random() * document.documentElement.clientHeight
+        );
+        tombolTidak.style.left = angkaRandom + "px";
+        tombolTidak.style.top = angkaRandom2 + "px";
+      }
+
+      function lanjut() {
+        window.location.href = "halam_ketiga.html";
+      }
+    </script>
+  </body>
+</html>
